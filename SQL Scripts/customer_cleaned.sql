@@ -5,7 +5,7 @@ USE AdventureWorksDW2019;
 
 SELECT CustomerKey, 
        GeographyKey, 
-	   CONCAT(FirstName, ' ', LastName) AS [CustomerName], 
+	   CONCAT(firstname, ' ', lastname) AS [customername], 
 	   BirthDate, CASE 
                       WHEN MaritalStatus = 'M' THEN 'Married'
 	                  WHEN MaritalStatus = 'S' THEN 'Single'
