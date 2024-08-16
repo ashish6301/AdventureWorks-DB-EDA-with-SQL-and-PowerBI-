@@ -1,21 +1,24 @@
 
-/*** Products Table Cleaned ***/
+
 
 USE AdventureWorksDW2019;
 
 SELECT ProductKey, 
        P.ProductSubcategoryKey, 
-	   EnglishProductName AS [ProductName], 
+	   EnglishProductName AS [productname], 
        Category, 
 	   Subcategory, 
 	   StandardCost, 
 	   Color, 
 	   ModelName, 
+	
 CASE
     WHEN Status IS NULL THEN 'Outdate' 
 	WHEN Status = 'Current' THEN 'Current'
+	
 END AS 'Status'
 FROM DimProduct P
+	
 INNER JOIN (SELECT C.ProductCategoryKey, 
                    ProductSubcategoryKey, 
 				   EnglishProductCategoryName AS [Category], 
