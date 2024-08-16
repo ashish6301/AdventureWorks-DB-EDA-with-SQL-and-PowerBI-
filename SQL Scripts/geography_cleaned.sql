@@ -1,5 +1,4 @@
 
-/*** Geography Table Cleaned ***/
 
 USE AdventureWorksDW2019;
 
@@ -11,5 +10,7 @@ SELECT GeographyKey,
 	   PostalCode, 
 	   S.SalesTerritoryKey
 FROM DimGeography G
+	
 INNER JOIN DimSalesTerritory S
+	
 ON G.SalesTerritoryKey = S.SalesTerritoryKey;
